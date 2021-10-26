@@ -1,0 +1,47 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+struct Node
+{
+    int data;
+    struct Node* next;
+
+};
+
+struct Node *head =NULL;
+void insertData(int data)
+{
+    struct Node *link =(struct Node *)malloc (sizeof(struct Node));
+    link->data=data;
+    link->next=head;
+    head=link;
+}
+void printlist()
+{
+    struct Node *ptr=head;
+    printf ("\n[");
+    while(ptr!=NULL)
+    {
+        printf("%d ",ptr->data);
+        ptr=ptr->next;
+        
+    }
+    printf("]\n");
+
+
+};
+
+int main(void)
+{
+    insertData(10);
+    insertData(20);
+    insertData(30);
+    insertData(40);
+    insertData(50);
+
+    printlist();
+    
+
+
+
+}
